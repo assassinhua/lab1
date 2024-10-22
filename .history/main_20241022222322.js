@@ -7,8 +7,7 @@ const app = createApp({
         const details = ref(true)
         return {
             cart,
-            premium,
-            details
+            premium
         }
     }
 

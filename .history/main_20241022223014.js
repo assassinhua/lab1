@@ -8,7 +8,7 @@ const app = createApp({
         return {
             cart,
             premium,
-            details
+            detailss
         }
     }
 
@@ -16,7 +16,7 @@ const app = createApp({
 })   
 
 app.component('product-display', productDisplay)
-app.component('product-details', productDisplay)
+app.component('product-detailss', productDisplay)
 app.mount('#app')
 
 

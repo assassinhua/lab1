@@ -8,7 +8,7 @@ const app = createApp({
         return {
             cart,
             premium,
-            details
+            detailss
         }
     }
 
