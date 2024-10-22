@@ -2,7 +2,7 @@ const { createApp, ref, computed } = Vue
 
 createApp({
     setup(){
-        const product = ref('Boots')
+        const product = ref('Boots are  nice')
         const brand = ref('SE 331')
 
         const image = computed(() => {

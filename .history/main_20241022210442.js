@@ -2,20 +2,20 @@ const { createApp, ref, computed } = Vue
 
 createApp({
     setup(){
-        const product = ref('Boots')
+        const product = ref('Boots are  nice')
         const brand = ref('SE 331')
 
         const image = computed(() => {
                         return variants.value[selectedVariant.value].image
                     })
                     const inStock = computed(() => {
-                                   return variants.value[selectedVariant.value].quantity
-                               })
+                        +            return variants.value[selectedVariant.value].quantity
+                        +        })
                         
        
             
    
-       
+       const inStock = ref(true)
         const inventory  = ref(100)
         const OnSale = ref(true)
         const details = ref([
@@ -45,9 +45,6 @@ createApp({
                             const title = computed(() =>{
                                             return brand.value + ' ' + product.value
                                         })
-                                        const saleMessage = computed(() => {  
-                                            return onSale.value ? `${brand.value} ${product.value} is on sale` : '';  
-                                          })
                                 
                             function updateImage(variantImage){
                                             image.value = variantImage
