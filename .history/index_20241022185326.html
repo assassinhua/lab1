@@ -32,9 +32,6 @@
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
             <p v-else>Out of Stock</p>
-            <button class="button" @click="toggleInStock">  
-                {{ inStock ? 'Out of Stock' : ' In Stock' }}  
-            </button> 
             <ul>
                                 <li v-for="detail in details">{{detail}}</li>
                                 
@@ -42,13 +39,14 @@
             <ul>
                 <li v-for="size in sizes">{{size}}</li>
             </ul>
-                            <div v-for="variant in variants" :key="variant.id"
-                            @mouseover="updateImage(variant.image)">
-                                {{ variant.color}}   
-            </div>
-            <button class="button" @click="addToCart">Add To Cart</button>
+                            <div v-for="variant in variants" :key="variant.id">
+                                {{ variant.color}}
+                
             
-
+            
+            <ul>
+                                    
+                                            </div>
                                 
                 
 

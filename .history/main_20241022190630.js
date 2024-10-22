@@ -30,7 +30,7 @@ createApp({
                             function updateImage(variantImage){
                                             image.value = variantImage
                             }
-             const toggleInStock = () => {  
+                            const toggleInStock = () => {  
                                 inStock.value = !inStock.value;  
                             }
                     

@@ -20,18 +20,12 @@ createApp({
                        'S,M,L for size',
         ])
         const variants = ref([
-            { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-            { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' }
+                       { id: 2234, color: 'green' },
+                       { id: 2235, color: 'blue' }
                    ])
                    const cart = ref(0)
                    function addToCart() {
                                 cart.value +=1
-                            }
-                            function updateImage(variantImage){
-                                            image.value = variantImage
-                            }
-             const toggleInStock = () => {  
-                                inStock.value = !inStock.value;  
                             }
                     
         return {
@@ -44,9 +38,7 @@ createApp({
             variants,
             sizes,
             cart,
-            addToCart,
-            updateImage,
-            toggleInStock
+            
         }
 }
                    
