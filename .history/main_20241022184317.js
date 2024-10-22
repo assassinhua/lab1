@@ -16,8 +16,9 @@ createApp({
                        
                    ])
             
-        const sizes = ref([
-                       'S,M,L for size',
+        const size = ref([
+                       'S for size',
+                       'M for size','L for size'
         ])
         const variants = ref([
                        { id: 2234, color: 'green' },
@@ -31,8 +32,7 @@ createApp({
             inventory,
             OnSale,
             details,
-            variants,
-            sizes
+            variants
         }
 }
                    

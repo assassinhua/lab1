@@ -16,7 +16,7 @@ createApp({
                        
                    ])
             
-        const sizes = ref([
+        const size = ref([
                        'S,M,L for size',
         ])
         const variants = ref([
