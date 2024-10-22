@@ -6,7 +6,6 @@ createApp({
         
 
         const image = ref('./assets/images/socks_green.jpg')
-   
        const inStock = ref(true)
         const inventory  = ref(100)
         const OnSale = ref(true)
@@ -36,6 +35,7 @@ createApp({
                                 inStock.value = !inStock.value;
                                  
                             }
+                            const outOfStockImage = './assets/images/out_of_stock.jpg'
                             
                     
         return {
@@ -48,6 +48,7 @@ createApp({
             variants,
             sizes,
             cart,
+            outOfStockImage,
             addToCart,
             updateImage,
             toggleInStock

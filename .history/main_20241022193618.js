@@ -6,7 +6,6 @@ createApp({
         
 
         const image = ref('./assets/images/socks_green.jpg')
-   
        const inStock = ref(true)
         const inventory  = ref(100)
         const OnSale = ref(true)
@@ -31,12 +30,9 @@ createApp({
                             function updateImage(variantImage){
                                             image.value = variantImage
                             }
-                             
-                            const toggleInStock = () => {  
-                                inStock.value = !inStock.value;
-                                 
+             const toggleInStock = () => {  
+                                inStock.value = !inStock.value;  
                             }
-                            
                     
         return {
             product,

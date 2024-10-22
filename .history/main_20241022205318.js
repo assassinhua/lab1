@@ -6,7 +6,7 @@ createApp({
         
 
         const image = ref('./assets/images/socks_green.jpg')
-   
+        const outOfStockImage = ref('./assets/images/socks_gray.jpg')
        const inStock = ref(true)
         const inventory  = ref(100)
         const OnSale = ref(true)
@@ -21,8 +21,8 @@ createApp({
                        'S,M,L for size',
         ])
         const variants = ref([
-            { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-            { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            { id: 2234, color: 'green', Image: './assets/images/socks_green.jpg' },
+            { id: 2235, color: 'blue', Image: './assets/images/socks_blue.jpg' },
                    ])
                    const cart = ref(0)
                    function addToCart() {
@@ -48,6 +48,7 @@ createApp({
             variants,
             sizes,
             cart,
+            outOfStockImage,
             addToCart,
             updateImage,
             toggleInStock

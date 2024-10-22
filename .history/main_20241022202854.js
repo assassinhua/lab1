@@ -6,7 +6,6 @@ createApp({
         
 
         const image = ref('./assets/images/socks_green.jpg')
-   
        const inStock = ref(true)
         const inventory  = ref(100)
         const OnSale = ref(true)
@@ -34,9 +33,10 @@ createApp({
                              
                             const toggleInStock = () => {  
                                 inStock.value = !inStock.value;
-                                 
+                                if (inStock.value) {  
+                                    color.value = 'g'; // 有货时设置为绿色  
+                                  }  
                             }
-                            
                     
         return {
             product,

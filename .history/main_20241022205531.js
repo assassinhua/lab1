@@ -22,7 +22,7 @@ createApp({
         ])
         const variants = ref([
             { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-            { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+            { id: 2235, color: 'blue', Image: './assets/images/socks_blue.jpg' },
                    ])
                    const cart = ref(0)
                    function addToCart() {
