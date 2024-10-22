@@ -9,7 +9,7 @@ createApp({
             product,
             image,
             productLink
-        };
+        }
     }
   
 }).mount('#app')

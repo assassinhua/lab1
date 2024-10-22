@@ -7,9 +7,8 @@ createApp({
         const productLink = ref('https://www.camt.cmu.ac.th');
         return {
             product,
-            image,
-            productLink
-        };
+            image
+        }
     }
   
 }).mount('#app')

@@ -8,8 +8,8 @@ createApp({
         return {
             product,
             image,
-            productLink
-        };
+            
+        }
     }
   
 }).mount('#app')

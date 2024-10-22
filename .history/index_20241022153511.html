@@ -16,22 +16,33 @@
         <div class="product-display">
  	      <div class="product-container">
                 <div class="product-image">
-                    <img :src="image" alt="Product Image">
-                    
+                    <img :src="image">
                 </div>
             </div>
         </div>
         <div class="product-info">
             <h1>{{product}}</h1>
-            <a :href="productLink">{{ product }}</a>
         </div>
 
     </div>
 
     <!-- Import Js -->
 
-    
-    <script src="./main.js"></script>
+    <script>  
+        // 创建 Vue 实例  
+        const app = Vue.createApp({  
+            data() {  
+                return {  
+                    image: 'path/to/your/image.jpg', // 替换为你的图片路径  
+                    product: 'Thin', // 替换为你的产品名称  
+                    productLink: 'https://www.camt.cmu.ac.th' // 产品链接  
+                };  
+            }  
+        });  
+  
+        // 挂载 Vue 实例到 #app  
+        app.mount('#app');  
+    </script>  
 
 
 
