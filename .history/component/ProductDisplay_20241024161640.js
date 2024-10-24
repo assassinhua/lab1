@@ -11,9 +11,9 @@ const productDisplay = {
                </div>
                <div class="product-info">
                    <h1>{{title}}</h1>
-                   <p v-if="inventory > 10">In Stock</p>
+                   <p v-if="inventory > 10">Out of Stock</p>
                    <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
-                   <p v-else>Out of Stock</p>
+                   <p v-else>In Stock</p>
                    <ul>
                        <li v-for="detail in details">{{detail}}</li>
                    </ul>

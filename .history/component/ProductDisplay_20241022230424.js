@@ -3,32 +3,47 @@ const productDisplay = {
     template:
         /*html*/
         `
-       <div class="product-display">
-               <div class="product-container">
-                   <div class="product-image">
-                       <img :src="image">
-                   </div>
-               </div>
-               <div class="product-info">
-                   <h1>{{title}}</h1>
-                   <p v-if="inventory > 10">In Stock</p>
-                   <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
-                   <p v-else>Out of Stock</p>
-                   <ul>
-                       <li v-for="detail in details">{{detail}}</li>
-                   </ul>
-                   <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)"
-                       class="color-circle" :style="{backgroundColor: variant.color}">
-      
-                   </div>
-                   <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To
-                       Cart</button>
-               </div>
-           </div>
-          
-       `,
-    setup() {
+    <div class="product-display">
+            <div class="product-container">
+                <div class="product-image">
+                    <img :src="image">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>{{title}}</h1>
+                <p v-if="inventory > 10">In Stock</p>
+                <p>Shipping: {{shipping}}</p>
+                <p>Detail: {{detail}}</p>
+                <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
+                <p v-else>Out of Stock</p>
+                <ul>
+                    <li v-for="detail in details">{{detail}}</li>
+                </ul>
+                <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)"
+                    class="color-circle" :style="{backgroundColor: variant.color}">
+   
+                </div>
+                <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To
+                    Cart</button>
+            </div>
+        </div>
+       
+    `,
+    props: {
+               
+           },
+           setup({ emit }) {
+           
+              
+                           
+                        
+            
+                
+               
+   
         const product = ref('Boots')
+        
+        
         const brand = ref('SE 331')
         // const image = ref('./assets/images/socks_green.jpg')
         // const inStock = ref(true)
@@ -54,7 +69,7 @@ const productDisplay = {
             return variants.value[selectedVariant.value].quantity
         })
         function addToCart() {
-            cart.value += 1
+            emit('add-to-cart', variants.value[selectedVariant.value].id)
         }
         const title = computed(() => {
             return brand.value + ' ' + product.value
@@ -71,7 +86,9 @@ const productDisplay = {
             variants,
             addToCart,
             updateImage,
-            updateVariant
+            updateVariant,
+            shipping,
+            detail
         }
     }
 }

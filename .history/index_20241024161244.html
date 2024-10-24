@@ -28,9 +28,9 @@
             </a>
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
-            <p v-else>Out Stock</p>
+            <p v-else>Out of Stock</p>
             <button class="button" @click="toggleInStock">  
-                {{ inStock ? 'In Stock' : ' Out of Stock' }}  
+                {{ inStock ? 'Out of Stock' : ' In Stock' }}  
             </button> 
             
             <ul>
