@@ -21,7 +21,7 @@ const productDisplay = {
       
                    </div>
                    <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To Cart</button>
-                   <button class="button" :disabled='!inCart' @click="rmCart" :class="{disabledButton: !inCart}">Remove From Cart</button>
+                   <button class="button" :disabled='!inCart' @click="rmoveCart" :class="{disabledButton: !inCart}">Remove From Cart</button>
                </div>
                <review-list v-if="reviews.length" :reviews="reviews"></review-list>
                <review-form @review-submitted="addReview"></review-form>
@@ -38,7 +38,7 @@ const productDisplay = {
             if (props.premium) {
                 return 'Free'
             } else {
-                return 10
+                return 30
             }
 
         })
@@ -71,7 +71,7 @@ const productDisplay = {
         function addToCart() {
             emit('add-to-cart', variants.value[selectedVariant.value].id)
         }
-        function rmCart() {
+        function rmoveCart() {
             emit('remove-from-cart', variants.value[selectedVariant.value].id)
         }
         const title = computed(() => {
@@ -95,7 +95,7 @@ const productDisplay = {
             variants,
             reviews,
             addToCart,
-            rmCart,
+            rmoveCart,
             updateImage,
             updateVariant,
             addReview,

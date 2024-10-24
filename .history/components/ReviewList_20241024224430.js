@@ -19,10 +19,11 @@ const reviewList = {
     , props: {
         reviews: {
             type: Array,
+            default: () => []
         }
     },
     setup(props) {
-        const reviews = props.reviews
+        const reviews = computed(() => props.reviews)
         return {
             reviews
         }
