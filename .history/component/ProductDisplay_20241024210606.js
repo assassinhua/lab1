@@ -14,6 +14,7 @@ const productDisplay = {
                    <p v-if="inventory > 10">In Stock</p>
                    <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
                    <p v-else>Out of Stock</p>
+                   <p>Shipping: {{shipping}}</p>
                    <ul>
                        <li v-for="detail in details">{{detail}}</li>
                    </ul>
@@ -24,10 +25,26 @@ const productDisplay = {
                    <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To
                        Cart</button>
                </div>
+                <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+            <review-form @review-submitted="addReview"></review-form>
+
            </div>
           
        `,
-    setup() {
+       props: {
+                premium: Boolean
+            },
+        
+       setup(props, { emit }) {
+        const shipping = computed(()=>{
+                        if (props.premium){
+                            return 'Free'
+                        } else {
+                            return 30
+                        }
+                       
+                    })
+            
         const product = ref('Boots')
         const brand = ref('SE 331')
         // const image = ref('./assets/images/socks_green.jpg')
@@ -54,7 +71,7 @@ const productDisplay = {
             return variants.value[selectedVariant.value].quantity
         })
         function addToCart() {
-            cart.value += 1
+            emit('add-to-cart', variants.value[selectedVariant.value].id)
         }
         const title = computed(() => {
             return brand.value + ' ' + product.value
@@ -62,6 +79,13 @@ const productDisplay = {
         function updateImage(variantImage) {
             image.value = variantImage
         }
+        const reviews = ref([])
+        function addReview(review){
+                        reviews.value.push(review)
+                    }
+            
+            
+            
         return {
             title,
             image,
@@ -69,9 +93,13 @@ const productDisplay = {
             inventory,
             details,
             variants,
+            shipping,,
+            cart,
+            premium,
             addToCart,
             updateImage,
-            updateVariant
+            updateVariant,
+            addReview
         }
     }
 }
